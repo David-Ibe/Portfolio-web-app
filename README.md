@@ -74,7 +74,7 @@ npm run start:dev
 Build and run the Docker container:
 ```bash
 docker build -t portfolio-app .
-docker run -p 3000:3000 portfolio-app
+docker run -p 3001:3001 portfolio-app
 ```
 
 ## Responsive Design
