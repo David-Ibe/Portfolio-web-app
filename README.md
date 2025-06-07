@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website showcasing my skills, experience, and projects as a Full-Stack Developer.
 
-## 🚀 Features
+## Features
 
 - **Responsive Design**: Optimized for all devices and screen sizes
 - **Modern UI**: Clean and professional interface with smooth animations
@@ -12,7 +12,7 @@ A modern, responsive portfolio website showcasing my skills, experience, and pro
 - **Skills Display**: Visual representation of technical expertise
 - **Experience Timeline**: Professional journey presentation
 
-## 🛠️ Technologies i used
+## Technologies i used
 
 ### Frontend
 - HTML5
@@ -28,14 +28,14 @@ A modern, responsive portfolio website showcasing my skills, experience, and pro
 - Docker
 - AWS Services (ECS Fargate, API Gateway, S3, ELB)
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 - Docker (for containerization)
 - AWS Account (for deployment)
 
-## 🔧 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -55,7 +55,7 @@ cd ../backend
 npm install
 ```
 
-## 🚀 Running the Application
+## Running the Application
 
 ### Frontend
 ```bash
@@ -69,7 +69,7 @@ cd backend
 npm run start:dev
 ```
 
-## 🐳 Docker Deployment
+## Docker Deployment
 
 Build and run the Docker container:
 ```bash
@@ -77,32 +77,26 @@ docker build -t portfolio-app .
 docker run -p 3000:3000 portfolio-app
 ```
 
-## 📱 Responsive Design
+## Responsive Design
 
 The website is fully responsive and optimized for:
 - Desktop
 - Tablet
 - Mobile devices
 
-## 🎨 Customization
+## Customization
 
 You can customize the website by:
 1. Modifying the `frontend/style.css` file
 2. Updating content in `frontend/index.html`
 3. Adjusting animations in `frontend/script.js`
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👤 Author
+## Author
 
 David Ibe
-- GitHub: [@David-Ibe](https://github.com/David-Ibe)
-- LinkedIn: [Your LinkedIn Profile]
-
-## 🙏 Acknowledgments
-
-- AOS Library for animations
-- Font Awesome for icons
-- Google Fonts for typography
+- GitHub:https://github.com/David-Ibe
+- LinkedIn:https://www.linkedin.com/in/chimaobidavidibe
