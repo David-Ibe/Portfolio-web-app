@@ -1,0 +1,23 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1 {
+  color: #007bff; /* A nice blue */
+}
+
+p {
+  font-size: 1.2em;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 5px;
+}

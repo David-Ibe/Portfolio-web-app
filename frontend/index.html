@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chimaobi Ibe | Portfolio</title>
+  <!-- AOS CSS for Scroll Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #e0e0e0;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      overflow-x: hidden;
+    }
+
+    /* Import Google Font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a2e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4CAF50;
+      border-radius: 4px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(10, 10, 30, 0.9);
+      backdrop-filter: blur(10px);
+      color: #e0e0e0;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .navbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #4CAF50, #66ff66);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #4CAF50;
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #4CAF50;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #e0e0e0;
+      padding-top: 60px;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(10, 10, 30, 0.8), rgba(10, 10, 30, 0.8)), url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, #4CAF50, #66ff66);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 5px 15px rgba(76, 175, 80, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #b0b0b0;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .cta {
+      padding: 12px 30px;
+      background: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .cta:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+    }
+
+    /* General Section Styling */
+    section {
+      padding: 80px 20px;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, #4CAF50, #66ff66);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+    }
+
+    /* About Section */
+    .about {
+      background: rgba(30, 30, 50, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      margin: 0 20px;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      color: #b0b0b0;
+    }
+
+    /* Experience Section */
+    .experience {
+      background: transparent;
+    }
+
+    .experience-card {
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .experience-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
+
+    .experience-card p {
+      margin-bottom: 1rem;
+      color: #b0b0b0;
+    }
+
+    /* Mission and Vision Section */
+    .mission-vision {
+      background: transparent;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .mission, .vision {
+      flex: 1;
+      min-width: 300px;
+      padding: 30px;
+      text-align: center;
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .mission h3, .vision h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
+
+    .mission p, .vision p {
+      color: #b0b0b0;
+    }
+
+    /* Skills Section */
+    .skills {
+      background: transparent;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .skill-card {
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    .skill-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
+
+    .skill-card p {
+      color: #b0b0b0;
+    }
+
+    /* Education & Certifications Section */
+    .education-certifications {
+      background: transparent;
+    }
+
+    .education-certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .education-card, .certification-card {
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .education-card h3, .certification-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
+
+    .certification-card p {
+      color: #b0b0b0;
+      margin-bottom: 0.5rem;
+    }
+
+    .certification-card a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .certification-card a:hover {
+      color: #66ff66;
+    }
+
+    /* Projects Section */
+    .projects {
+      background: transparent;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #e0e0e0;
+    }
+
+    .project-card p {
+      color: #b0b0b0;
+      margin-bottom: 1rem;
+    }
+
+    .project-card a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #66ff66;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: transparent;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(30, 30, 50, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .contact .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid rgba(76, 175, 80, 0.3);
+      border-radius: 5px;
+      font-size: 1rem;
+      background: rgba(10, 10, 30, 0.5);
+      color: #e0e0e0;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact input:focus, .contact textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+
+    .contact textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    .contact .error-border {
+      border-color: #ff5555;
+      box-shadow: 0 0 10px rgba(255, 85, 85, 0.3);
+    }
+
+    .contact .error-message {
+      color: #ff5555;
+      font-size: 0.9rem;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+    }
+
+    .contact button {
+      display: block;
+      width: 200px;
+      padding: 12px;
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      margin: 20px auto;
+      font-weight: 500;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    }
+
+    .contact button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+    }
+
+    .form-status {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .form-status.success {
+      color: #4CAF50;
+    }
+
+    .form-status.error {
+      color: #ff5555;
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(10, 10, 30, 0.9);
+      backdrop-filter: blur(10px);
+      color: #e0e0e0;
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(76, 175, 80, 0.2);
+    }
+
+    .footer h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer a:hover {
+      color: #66ff66;
+    }
+
+    .footer-copyright {
+      background: #0a0a1e;
+      color: #b0b0b0;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4CAF50;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+    }
+
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(76, 175, 80, 0.6);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+      }
+
+      .mission-vision {
+        flex-direction: column;
+      }
+
+      .skills-grid, .education-certifications-grid, .project-list {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+
+      .cta {
+        padding: 10px 20px;
+      }
+
+      .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">Chimaobi Ibe</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#mission-vision">Mission</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <h1 data-aos="fade-up">Software. Security. Operations.</h1>
+      <p data-aos="fade-up" data-aos-delay="200"> Full-Stack Developer | Cybersecurity | DevOps</p>
+      <a href="#projects" class="cta" data-aos="fade-up" data-aos-delay="400">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2 data-aos="fade-up">About Me</h2>
+      <p data-aos="fade-up" data-aos-delay="200">
+        I'm a skilled full-stack developer who builds secure, high-performance web applications. I work with technologies like React, Next.js, HTML, CSS, JavaScript, NestJS, Python, Node.js, Supabase, MongoDB, and PostgreSQL. To create scalable and reliable solutions, I leverage AWS services (API Gateway, ECS Fargate, CloudFormation, S3, ELB) and containerization with Docker.
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="300">
+        With a Google Cybersecurity certification, I bring a strong security mindset to every project, ensuring applications are robust and resilient. My background in scientific study has sharpened my analytical problem-solving and attention to detail—key strengths when tackling complex engineering challenges.
+      </p>
+
+      <p data-aos="fade-up" data-aos-delay="400">
+        I combine technical expertise with strong communication and critical-thinking skills, allowing me to thrive in collaborative, cross-functional teams. Passionate about innovation, I'm driven to deliver cutting-edge web solutions that prioritize performance, scalability, and exceptional user experiences.
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <h2 data-aos="fade-up">Professional Experience</h2>
+      <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Full-Stack Developer | Require Technologies Limited, Nigeria</h3>
+        <p>May 2020 – Jan 2025 (4 years 9 months)</p>
+        <ul class="experience-list">
+          <li>Designed and developed full-stack web applications using React and Next.js (front-end) and Node.js/NestJS (back-end), delivering scalable, high-performance solutions with improved UX and system reliability.</li>
+          
+          <li>Architected and deployed modern web applications on AWS, leveraging EC2, ECS Fargate, API Gateway, CloudFormation, S3, and ELB to ensure secure, scalable, and highly available infrastructure.</li>
+          
+          <li>Automated infrastructure provisioning with CloudFormation and managed CI/CD pipelines using Git, enabling faster and more reliable software delivery.</li>
+          
+          <li>Containerized applications with Docker, optimizing deployment workflows and improving portability across environments.</li>
+          
+          <li>Implemented JWT-based authentication and fine-grained access controls; integrated AWS Web Application Firewall (WAF), SSL/TLS certificates, and IAM policies to harden application security.</li>
+          
+          <li>Built and deployed a full-stack application with NestJS and PostgreSQL (data tier), React front-end (presentation tier), and Dockerized services, following 3-tier architecture best practices.</li>
+          
+          <li>Leveraged Linux systems administration skills to manage server environments and optimize system performance and security.</li>
+          
+          <li>Developed and secured a personal portfolio website with a Next.js front-end and Node.js back-end, hosted on AWS S3 and Amplify with strict IAM controls and WAF protection.</li>
+          
+          <li>Practiced secure coding principles and performed input validation and sanitization, informed by Google Cybersecurity training, ensuring application resilience against common attack vectors.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission and Vision Section -->
+  <section class="mission-vision" id="mission-vision">
+    <div class="container">
+      <div class="mission" data-aos="fade-up">
+        <h3>My Mission</h3>
+        <p>To create accessible, secure, and efficient tech solutions that empower users and businesses to thrive in a rapidly evolving digital world.</p>
+      </div>
+      <div class="vision" data-aos="fade-up" data-aos-delay="200">
+        <h3>My Vision</h3>
+        <p>To be a trailblazer in innovation, simplifying technology to drive progress and create meaningful impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2 data-aos="fade-up">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card" data-aos="fade-up">
+          <h3>Front-End Development</h3>
+          <p>Expertise in React, Next.js, HTML, CSS, and JavaScript to build responsive and user-friendly interfaces.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Back-End Development</h3>
+          <p>Proficient in Nest.js, Node.js, Supabase, MongoDB, and PostgreSQL for robust server-side solutions.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Cloud & Infrastructure</h3>
+          <p>Skilled in AWS (API Gateway, ECS Fargate, CloudFormation, S3, ELB) and Docker for scalable deployments.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Cybersecurity</h3>
+          <p>Google Cybersecurity Certified, specializing in secure app development, JWT authentication, and AWS WAF.</p>
+        </div>
+        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+          <h3>Other Skills</h3>
+          <p>Python, Linux, SQL, critical thinking, analytical problem-solving, communication, and collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certifications Section -->
+  <section class="education-certifications" id="education">
+    <div class="container">
+      <h2 data-aos="fade-up">Education & Certifications</h2>
+      <div class="education-certifications-grid">
+        <div class="education-card" data-aos="fade-up">
+          <h3>Bachelor of Industrial Chemistry</h3>
+          <p>Enugu State University of Science and Technology</p>
+        </div>
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Google Cybersecurity Certificate</h3>
+          <p>Issued by Google, Jun 2025 - Current</p>
+          <p><a href="https://www.credly.com/badges/43bf09db-62e7-4394-ae4c-9766a5999c22/public_url" target="_blank">View Credential</a></p>
+        </div>
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>LFS162: DevOps and Site Reliability Engineering</h3>
+          <p>Issued by The Linux Foundation</p>
+          <p><a href="https://www.credly.com/earner/earned/badge/53428a76-43a3-4490-8722-1dba687cf77d" target="_blank">View Credential</a></p>
+        </div>
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="300">
+          <h3>LFS101: Introduction to Linux</h3>
+          <p>Issued by The Linux Foundation</p>
+          <p><a href="https://www.credly.com/earner/earned/badge/588f38f2-76e7-470b-a9fe-1517eb00ae51" target="_blank">View Credential</a></p>
+        </div>
+        <div class="certification-card" data-aos="fade-up" data-aos-delay="400">
+          <h3>AWS Cloud 101</h3>
+          <p>Issued by Amazon Web Services Training and Certification</p>
+          <p><a href="https://www.credly.com/earner/earned/badge/0b192ab2-49be-4e87-8757-b96083fb5f65" target="_blank">View Credential</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 data-aos="fade-up">My Projects</h2>
+      <div class="project-list">
+        <div class="project-card" data-aos="fade-up">
+          <h3>Secure Portfolio Website</h3>
+          <p>A Next.js and Node.js-based portfolio site hosted on AWS S3 and Amplify, secured with IAM policies and AWS WAF.</p>
+          <a href="https://github.com/chimaobiibe/portfolio" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <h3>Full-Stack Web App</h3>
+          <p>A web application built with Nest.js, PostgreSQL, React, and Docker, deployed on AWS ECS Fargate with CloudFormation.</p>
+          <a href="https://github.com/chimaobiibe/webapp" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 data-aos="fade-up">Contact Me</h2>
+      <form id="contactForm" data-aos="fade-up" data-aos-delay="200">
+        <div class="form-group">
+          <input type="text" name="name" id="name" placeholder="Your Name" required>
+          <span class="error-message" id="name-error"></span>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" id="email" placeholder="Your Email" required>
+          <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+          <span class="error-message" id="message-error"></span>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="formStatus" class="form-status"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <h3 data-aos="fade-up">Chimaobi Ibe | Full-Stack Developer</h3>
+    <p data-aos="fade-up" data-aos-delay="200">📧 <a href="mailto:cxxx2500@gmail.com">cxxx2500@gmail.com</a></p>
+  </footer>
+  <div class="footer-copyright">
+    © 2025 Chimaobi Ibe, All Rights Reserved
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#about" class="back-to-top" title="Back to Top">↑</a>
+
+  <!-- Particle.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- AOS JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- VanillaTilt.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script>
+    // Initialize Particle.js
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#4CAF50' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: '#4CAF50', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+      },
+      retina_detect: true
+    });
+
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // Initialize VanillaTilt.js for Cards
+    VanillaTilt.init(document.querySelectorAll('.skill-card, .project-card, .education-card, .certification-card'), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.3,
+    });
+
+    // Contact Form Handling with Real-Time Validation
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+
+    const validateField = (input, errorElement, validationFn, errorMessage) => {
+      if (!validationFn(input.value)) {
+        input.classList.add('error-border');
+        errorElement.textContent = errorMessage;
+        return false;
+      } else {
+        input.classList.remove('error-border');
+        errorElement.textContent = '';
+        return true;
+      }
+    };
+
+    const validateName = (value) => value.trim().length >= 2;
+    const validateEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    const validateMessage = (value) => value.trim().length >= 10;
+
+    nameInput.addEventListener('input', () => validateField(nameInput, nameError, validateName, 'Name must be at least 2 characters'));
+    emailInput.addEventListener('input', () => validateField(emailInput, emailError, validateEmail, 'Please enter a valid email'));
+    messageInput.addEventListener('input', () => validateField(messageInput, messageError, validateMessage, 'Message must be at least 10 characters'));
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const isNameValid = validateField(nameInput, nameError, validateName, 'Name must be at least 2 characters');
+      const isEmailValid = validateField(emailInput, emailError, validateEmail, 'Please enter a valid email');
+      const isMessageValid = validateField(messageInput, messageError, validateMessage, 'Message must be at least 10 characters');
+
+      if (!isNameValid || !isEmailValid || !isMessageValid) return;
+
+      const formData = {
+        name: nameInput.value,
+        email: emailInput.value,
+        message: messageInput.value,
+      };
+
+      try {
+        const response = await fetch('http://localhost:3001/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          formStatus.textContent = 'Message sent successfully!';
+          formStatus.classList.add('success');
+          contactForm.reset();
+        } else {
+          formStatus.textContent = `Error: ${data.message || 'Failed to send message.'}`;
+          formStatus.classList.add('error');
+        }
+      } catch (err) {
+        formStatus.textContent = 'Error: Could not connect to the server.';
+        formStatus.classList.add('error');
+        console.error('Error submitting form:', err);
+      }
+
+      setTimeout(() => {
+        formStatus.textContent = '';
+        formStatus.classList.remove('success', 'error');
+      }, 5000);
+    });
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+
+    // Back to Top Button
+    const backToTop = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
